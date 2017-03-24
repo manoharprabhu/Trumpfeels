@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.15.2",
+    "nedb": "^1.8.0",
+    "sentiment": "^3.0.1",
+    "twitter": "^1.7.0"
+  }
+}
