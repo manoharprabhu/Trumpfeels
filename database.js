@@ -66,7 +66,7 @@ var Database = (function() {
 
     var getMostFrequentlySaidWords = function(topN, callback) {
         var keys = {};
-        db.find({}).sort({ time: -1 }).exec(function(err, docs) {
+        db.find({}).sort({ time: -1 }).limit(1000).exec(function(err, docs) {
             docs.forEach(function(item) {
                 var words = removeStopwords(item.tweet.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(" "));
                 words.forEach(function(word) {

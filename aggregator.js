@@ -1,7 +1,7 @@
 var aggregator = (function() {
     var Database = require('./database');
     var getCurrentAverageScore = function(callback) {
-        var recordsCount = 1000;
+        var recordsCount = 5000;
         Database.getCurrentAverageScore(recordsCount, function(score) {
             callback(score);
         });
