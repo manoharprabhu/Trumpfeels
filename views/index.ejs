@@ -1,7 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-  </body>
+
+<head>
+    <title>Trump feels</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="title-container">
+        <p class="text-center top-title">What are people saying about Trump right now?</p>
+    </div>
+    <div class="container mt20">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="canvas-container">
+                    <canvas id="chart-content"></canvas>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Number of Tweets on trump analyzed</div>
+                        <div class="panel-body">
+                            <div class="republican-text-color text-center">
+                                <h3 id="tweet-count">-</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Sentiment of last 1000 tweets on trump</div>
+                        <div class="panel-body">
+                            <div class="row text-center">
+                                <div class="col-md-6">
+                                    <div class="row" id="positive-count">-</div>
+                                    <div class="row"><strong>Positive</strong></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row" id="negative-count">-</div>
+                                    <div class="row"><strong>Negative</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
