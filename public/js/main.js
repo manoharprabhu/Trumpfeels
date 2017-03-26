@@ -40,22 +40,28 @@
         document.getElementById('negative-count').innerText = data.score.negative;
     }
 
-    $.ajax({
-        url: '/mostFrequentWords'
-    }).done(function(data) {
-        drawChart(data);
-    });
+    var refreshData = function() {
+        $.ajax({
+            url: '/mostFrequentWords'
+        }).done(function(data) {
+            drawChart(data);
+        });
 
-    $.ajax({
-        url: '/count'
-    }).done(function(data) {
-        populateTweetCount(data);
-    });
+        $.ajax({
+            url: '/count'
+        }).done(function(data) {
+            populateTweetCount(data);
+        });
 
-    $.ajax({
-        url: '/status'
-    }).done(function(data) {
-        populateScoreChart(data);
-    });
+        $.ajax({
+            url: '/status'
+        }).done(function(data) {
+            populateScoreChart(data);
+        });
+    }
+
+    refreshData();
+
+    setInterval(refreshData, 10000);
 
 }());
