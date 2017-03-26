@@ -42,3 +42,12 @@
 .M20 {
     margin: 20px;
 }
+
+.panel>.panel-heading {
+    background-color: #e74c3c;
+    color: #FFFFFF;
+}
+
+.panel {
+    border: 1px solid #e74c3c;
+}

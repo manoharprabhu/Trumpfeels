@@ -23,9 +23,19 @@
                 },
                 scales: {
                     yAxes: [{
+                        gridLines: {
+                            display: true,
+                            color: 'rgba(35, 32, 102, 1)'
+                        },
                         scaleLabel: {
                             display: true,
                             labelString: 'Count'
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: true,
+                            color: 'rgba(35, 32, 102, 1)'
                         }
                     }]
                 }
