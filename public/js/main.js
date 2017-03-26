@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-
+    var myChart = null;
     var drawChart = function(data) {
         var chartData = {
             labels: data.map(function(item) { return item[0]; }),
@@ -11,7 +11,10 @@
             }]
         }
         var ctx = document.getElementById('chart-content').getContext('2d');
-        var myChart = new Chart(ctx, {
+        if (myChart !== null) {
+            myChart.destroy();
+        }
+        myChart = new Chart(ctx, {
             type: 'line',
             data: chartData,
             options: {
@@ -35,7 +38,6 @@
     }
 
     var populateScoreChart = function(data) {
-        console.log(data);
         document.getElementById('positive-count').innerText = data.score.positive;
         document.getElementById('negative-count').innerText = data.score.negative;
     }
