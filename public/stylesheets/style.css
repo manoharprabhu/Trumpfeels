@@ -1,11 +1,13 @@
 .top-title {
     font-size: 2em;
     color: #FFFFFF;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
 }
 
 .canvas-container {
     width: 100%;
-    text-align: center;
 }
 
 .mt20 {
@@ -15,8 +17,8 @@
 .title-container {
     width: 100%;
     height: 100px;
-    line-height: 100px;
     background-color: #e74c3c;
+    display: table;
 }
 
 .republican-text-color {
@@ -35,4 +37,8 @@
 #negative-count {
     font-size: 1.8em;
     color: #e74c3c;
+}
+
+.M20 {
+    margin: 20px;
 }

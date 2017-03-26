@@ -12,7 +12,8 @@ var Database = (function() {
         'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'those',
         'through', 'to', 'too', 'under', 'up', 'very', 'was', 'way', 'we', 'well', 'were',
         'what', 'where', 'which', 'while', 'who', 'with', 'would', 'you', 'your', 'a', 'i',
-        'rt', 'amp', '', 'not', 'trump', 'trumps', 'will', 'not', 'president', 'its', 'donald', 'trump'
+        'rt', 'amp', '', 'not', 'trump', 'trumps', 'will', 'not', 'president', 'its', 'donald',
+        'trump', 'donaldtrump', 'http', 'https'
     ];
     var insertIntoDB = function(object) {
         db.insert(object, function(err, document) {
@@ -60,7 +61,7 @@ var Database = (function() {
 
     var removeStopwords = function(arr) {
         return arr.filter(function(item) {
-            return (stopwords.indexOf(item) === -1)
+            return (item.length > 3) && (item.indexOf('http') === -1) && (stopwords.indexOf(item) === -1)
         });
     }
 
