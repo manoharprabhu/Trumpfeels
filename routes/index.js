@@ -9,9 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/status', function(req, res, next) {
     aggregator.getCurrentAverageScore(function(score) {
-        res.json({
-            score
-        });
+        res.json(score);
     });
 });
 
@@ -22,8 +20,8 @@ router.get('/mostFrequentWords', function(req, res, next) {
 });
 
 router.get('/count', function(req, res, next) {
-    aggregator.getNumberOfTweetsAnalyzed(function(count) {
-        res.json({ count: count });
+    aggregator.getNumberOfTweetsAnalyzed(function(data) {
+        res.json(data);
     });
 });
 

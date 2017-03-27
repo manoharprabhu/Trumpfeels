@@ -1,5 +1,23 @@
 (function() {
     'use strict';
+
+    var socket = io();
+    socket.on('connect', function() {
+        console.log('Connected to socket...');
+    });
+
+    socket.on('mostFrequent', function(data) {
+        drawChart(data);
+    });
+
+    socket.on('currentAverageScore', function(data) {
+        populateScoreChart(data);
+    });
+
+    socket.on('numberOfTweetsAnalyzed', function(data) {
+        populateTweetCount(data);
+    });
+
     var myChart = null;
     var drawChart = function(data) {
         var chartData = {
@@ -51,8 +69,8 @@
     }
 
     var populateScoreChart = function(data) {
-        document.getElementById('positive-count').innerText = data.score.positive;
-        document.getElementById('negative-count').innerText = data.score.negative;
+        document.getElementById('positive-count').innerText = data.positive;
+        document.getElementById('negative-count').innerText = data.negative;
     }
 
     var refreshData = function() {
@@ -76,7 +94,5 @@
     }
 
     refreshData();
-
-    setInterval(refreshData, 10000);
 
 }());

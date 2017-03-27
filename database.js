@@ -43,7 +43,7 @@ var Database = (function() {
 
     var getNumberOfTweetsAnalyzed = function(callback) {
         db.count({}, function(err, count) {
-            callback(count);
+            callback({ count });
         });
     }
 
