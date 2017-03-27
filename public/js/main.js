@@ -25,7 +25,9 @@
             datasets: [{
                 label: 'Most frequently mentioned words in tweets',
                 data: data.map(function(item) { return item[1]; }),
-                backgroundColor: 'rgba(233, 29, 14, 0.4)'
+                backgroundColor: 'rgba(231, 76, 60, 0.5)',
+                borderColor: 'rgba(35, 32, 102, 1)',
+                borderWidth: 1
             }]
         }
         var ctx = document.getElementById('chart-content').getContext('2d');
@@ -46,7 +48,7 @@
                     yAxes: [{
                         gridLines: {
                             display: true,
-                            color: 'rgba(35, 32, 102, 1)'
+                            color: 'rgba(150, 150, 150, 0.2)'
                         },
                         scaleLabel: {
                             display: true,
@@ -56,7 +58,7 @@
                     xAxes: [{
                         gridLines: {
                             display: true,
-                            color: 'rgba(35, 32, 102, 1)'
+                            color: 'rgba(150, 150, 150, 0.2)'
                         }
                     }]
                 }
@@ -69,8 +71,8 @@
     }
 
     var populateScoreChart = function(data) {
-        document.getElementById('positive-count').innerText = data.positive;
-        document.getElementById('negative-count').innerText = data.negative;
+        document.getElementById('positive-count').innerHTML = data.positive + ' <span class="glyphicon glyphicon-ok"></span>';
+        document.getElementById('negative-count').innerHTML = data.negative + ' <span class="glyphicon glyphicon-remove"></span>';
     }
 
     var refreshData = function() {

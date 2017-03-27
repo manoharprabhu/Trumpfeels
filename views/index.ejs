@@ -10,39 +10,46 @@
 
 <body>
     <div class="title-container">
-        <div class="top-title">What are people saying about Trump right now?</div>
+        <div class="top-title"><span class="glyphicon glyphicon-comment"></span> What are people saying about Trump right now?</div>
     </div>
     <div class="container mt20">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div class="canvas-container">
                     <canvas id="chart-content"></canvas>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="row">
-                    <div class="panel panel-default M20">
-                        <div class="panel-heading text-center">Number of Tweets on trump analyzed</div>
+                    <div class="panel panel-default M10">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-12"><span class="glyphicon glyphicon-retweet large"></span> Number of Tweets analyzed</div>
+                            </div>
+                        </div>
                         <div class="panel-body">
                             <div class="republican-text-color text-center">
-                                <h3 id="tweet-count">-</h3>
+                                <h1 id="tweet-count">-</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="panel panel-default M20">
-                        <div class="panel-heading text-center">Sentiment of last 5000 tweets on trump</div>
+                    <div class="panel panel-default M10">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-12"><span class="glyphicon glyphicon-fire large"></span> Sentiment of the last 5000 Tweets</div>
+                            </div>
+                        </div>
                         <div class="panel-body">
                             <div class="row text-center">
-                                <div class="col-md-6">
-                                    <div class="row" id="positive-count">-</div>
-                                    <div class="row"><strong>Positive</strong></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="row"><span id="positive-count">-</span>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="row" id="negative-count">-</div>
-                                    <div class="row"><strong>Negative</strong></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="row"><span id="negative-count">-</span></div>
                                 </div>
                             </div>
                         </div>

@@ -44,6 +44,8 @@ app.use(function(err, req, res, next) {
 
 //Start twitter streamng api and collect tweets
 collector('trump');
+
+//Publish new results on socket
 autopublisher(5000);
 
 module.exports = app;
