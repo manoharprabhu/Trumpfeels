@@ -39,17 +39,18 @@
                     <div class="panel panel-default M10">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-12"><span class="glyphicon glyphicon-fire large"></span> Sentiment of the last 5000 Tweets</div>
+                                <div class="col-xs-12"><span class="glyphicon glyphicon-fire large"></span> Positive VS Negative tweets</div>
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="row text-center">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="row"><span id="positive-count">-</span>
-                                    </div>
+                            <div class="row">
+                                <div class="progress M10">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" id="positive-count" role="progressbar" style="width: 0%"></div>
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="row"><span id="negative-count">-</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="progress M10">
+                                    <div class="progress-bar progress-bar-danger progress-bar-striped active" id="negative-count" role="progressbar" style="width: 0%"></div>
                                 </div>
                             </div>
                         </div>

@@ -32,22 +32,6 @@
     display: inline;
 }
 
-#positive-count {
-    font-size: 1.8em;
-    color: #FFFFFF;
-    background-color: #2ecc71;
-    border-radius: 4px;
-    padding: 10px;
-}
-
-#negative-count {
-    font-size: 1.8em;
-    color: #FFFFFF;
-    background-color: #e74c3c;
-    border-radius: 4px;
-    padding: 10px;
-}
-
 .M10 {
     margin: 10px;
 }

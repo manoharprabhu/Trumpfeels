@@ -71,8 +71,17 @@
     }
 
     var populateScoreChart = function(data) {
-        document.getElementById('positive-count').innerHTML = data.positive + ' <span class="glyphicon glyphicon-ok"></span>';
-        document.getElementById('negative-count').innerHTML = data.negative + ' <span class="glyphicon glyphicon-remove"></span>';
+        var positive = data.positive;
+        var negative = data.negative;
+        if (positive + negative !== 0) {
+            var positiveWidth = Math.round((positive / (positive + negative)) * 100);
+            var negativeWidth = Math.round((negative / (positive + negative)) * 100);
+            document.getElementById('positive-count').innerText = positiveWidth + '%';
+            document.getElementById('positive-count').style.width = positiveWidth + '%';
+
+            document.getElementById('negative-count').innerHTML = negativeWidth + '%';
+            document.getElementById('negative-count').style.width = negativeWidth + '%';
+        }
     }
 
     var refreshData = function() {
