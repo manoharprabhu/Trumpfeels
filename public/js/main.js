@@ -12,7 +12,10 @@
         }
         var ctx = document.getElementById('chart-content').getContext('2d');
         if (myChart !== null) {
-            myChart.destroy();
+            myChart.data.datasets[0].data = data.map(function(item) { return item[1]; });
+            myChart.data.labels = data.map(function(item) { return item[0]; });
+            myChart.update();
+            return;
         }
         myChart = new Chart(ctx, {
             type: 'line',
