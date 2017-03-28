@@ -76,34 +76,11 @@
         if (positive + negative !== 0) {
             var positiveWidth = Math.round((positive / (positive + negative)) * 100);
             var negativeWidth = Math.round((negative / (positive + negative)) * 100);
-            document.getElementById('positive-count').innerText = positiveWidth + '%';
+            document.getElementById('positive-count').innerText = positiveWidth + '% Positive';
             document.getElementById('positive-count').style.width = positiveWidth + '%';
 
-            document.getElementById('negative-count').innerHTML = negativeWidth + '%';
+            document.getElementById('negative-count').innerHTML = negativeWidth + '% Negative';
             document.getElementById('negative-count').style.width = negativeWidth + '%';
         }
     }
-
-    var refreshData = function() {
-        $.ajax({
-            url: '/mostFrequentWords'
-        }).done(function(data) {
-            drawChart(data);
-        });
-
-        $.ajax({
-            url: '/count'
-        }).done(function(data) {
-            populateTweetCount(data);
-        });
-
-        $.ajax({
-            url: '/status'
-        }).done(function(data) {
-            populateScoreChart(data);
-        });
-    }
-
-    refreshData();
-
 }());
