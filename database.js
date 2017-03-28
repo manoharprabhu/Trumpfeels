@@ -13,7 +13,7 @@ var Database = (function() {
         'through', 'to', 'too', 'under', 'up', 'very', 'was', 'way', 'we', 'well', 'were',
         'what', 'where', 'which', 'while', 'who', 'with', 'would', 'you', 'your', 'a', 'i',
         'rt', 'amp', '', 'not', 'trump', 'trumps', 'will', 'not', 'president', 'its', 'donald',
-        'trump', 'donaldtrump', 'http', 'https'
+        'trump', 'donaldtrump', 'http', 'https', 'realdonaldtrump', 'when', 'know', 'lets', 'just', 'dont'
     ];
     var insertIntoDB = function(object) {
         db.insert(object, function(err, document) {

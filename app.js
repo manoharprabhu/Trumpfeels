@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 });
 
 //Start twitter streamng api and collect tweets
-collector('trump');
+collector('realDonaldTrump');
 
 //Publish new results on socket
 autopublisher(5000);
