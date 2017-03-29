@@ -1,5 +1,8 @@
-var autopublisher = function(interval) {
+var autopublisher = function(interval, server) {
     'use strict';
+    var socketIO = require('socket.io');
+    var io = socketIO(server);
+    var Database = require('./database');
     var publishData = function() {
         Database.getMostFrequentlySaidWords(10, function(data) {
             io.emit('mostFrequent', data);
@@ -13,7 +16,6 @@ var autopublisher = function(interval) {
             io.emit('numberOfTweetsAnalyzed', data);
         });
     }
-    var Database = require('./database');
     setInterval(publishData, interval);
     publishData();
 };

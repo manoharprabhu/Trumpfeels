@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var collector = require('./collector');
-var autopublisher = require('./autopublisher');
 var app = express();
 
 // view engine setup
@@ -44,8 +43,5 @@ app.use(function(err, req, res, next) {
 
 //Start twitter streamng api and collect tweets
 collector('realDonaldTrump');
-
-//Publish new results on socket
-autopublisher(5000);
 
 module.exports = app;
