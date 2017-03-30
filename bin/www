@@ -3,11 +3,12 @@
 /**
  * Module dependencies.
  */
-
+require('newrelic');
 var app = require('../app');
 var debug = require('debug')('trumpfeels:server');
 var http = require('http');
 var autopublisher = require('../autopublisher');
+
 
 /**
  * Get port from environment and store in Express.
