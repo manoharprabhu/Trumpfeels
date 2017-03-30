@@ -83,11 +83,18 @@ var Database = (function() {
         });
     }
 
+    var getMostRecentTweet = function(callback) {
+        db.findOne({}).sort({ time: -1 }).exec(function(err, data) {
+            callback(data);
+        });
+    }
+
     return {
         insertIntoDB,
         getCurrentAverageScore,
         getMostFrequentlySaidWords,
-        getNumberOfTweetsAnalyzed
+        getNumberOfTweetsAnalyzed,
+        getMostRecentTweet
     }
 }());
 

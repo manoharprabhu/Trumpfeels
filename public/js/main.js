@@ -1,5 +1,6 @@
 (function() {
     'use strict';
+    var lastTweet = null;
 
     var socket = io();
     socket.on('connect', function() {
@@ -16,6 +17,10 @@
 
     socket.on('numberOfTweetsAnalyzed', function(data) {
         populateTweetCount(data);
+    });
+
+    socket.on('mostRecentTweet', function(tweet) {
+        appendNewTweet(tweet);
     });
 
     var myChart = null;
@@ -41,6 +46,8 @@
             type: 'line',
             data: chartData,
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 legend: {
                     position: 'bottom'
                 },
@@ -82,5 +89,16 @@
             document.getElementById('negative-count').innerHTML = negativeWidth + '% Negative';
             document.getElementById('negative-count').style.width = negativeWidth + '%';
         }
+    }
+
+    var appendNewTweet = function(tweet) {
+        if (lastTweet !== null && lastTweet === tweet) {
+            return;
+        }
+
+        $('<div>')
+            .addClass('tweet-item')
+            .text(tweet).hide().prependTo('#tweets-collection').fadeIn();
+        lastTweet = tweet;
     }
 }());

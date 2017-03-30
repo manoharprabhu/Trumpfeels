@@ -15,6 +15,13 @@ var autopublisher = function(interval, server) {
         Database.getNumberOfTweetsAnalyzed(function(data) {
             io.emit('numberOfTweetsAnalyzed', data);
         });
+
+        Database.getMostRecentTweet(function(tweet) {
+            if (tweet !== null) {
+                var stripped = tweet.tweet.replace(/(?:https?|http):\/\/[\n\S]+/g, '');
+                io.emit('mostRecentTweet', stripped);
+            }
+        });
     }
     setInterval(publishData, interval);
     publishData();
