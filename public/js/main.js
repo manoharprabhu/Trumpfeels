@@ -74,7 +74,7 @@
     }
 
     var populateTweetCount = function(count) {
-        document.getElementById('tweet-count').innerText = count.count;
+        document.getElementById('tweet-count').innerText = count.count + ' tweets analyzed';
     }
 
     var populateScoreChart = function(data) {
@@ -96,6 +96,7 @@
             return;
         }
 
+        $('#tweets-collection').empty();
         $('<div>')
             .addClass('tweet-item')
             .text(tweet).hide().prependTo('#tweets-collection').fadeIn();

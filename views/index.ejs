@@ -14,50 +14,43 @@
     </div>
     <div class="container mt20">
         <div class="row">
-            <div class="col-md-3 overflow-scroll">
-                <div id="tweets-collection">
-
-                </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="canvas-container">
                     <canvas id="chart-content" width="100%" height="450px"></canvas>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <div class="row">
-                    <div class="panel panel-default M10">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12"><span class="glyphicon glyphicon-retweet large"></span> Number of Tweets analyzed</div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="republican-text-color text-center">
-                                <h1 id="tweet-count">-</h1>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="panel panel-default M10">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12"><span class="glyphicon glyphicon-fire large"></span><span style="font-size: 2em"> Tweet sentiments</span></div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="progress M10">
+                                            <div class="progress-bar progress-bar-striped active" id="tweet-count" role="progressbar" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="progress M10">
+                                            <div class="progress-bar progress-bar-success progress-bar-striped active" id="positive-count" role="progressbar" style="width: 0%"></div>
+                                            <div class="progress-bar progress-bar-danger progress-bar-striped active" id="negative-count" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr />
                 <div class="row">
                     <div class="panel panel-default M10">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12"><span class="glyphicon glyphicon-fire large"></span> Positive VS Negative tweets</div>
-                            </div>
-                        </div>
+                        <div class="panel-heading"><span class="glyphicon glyphicon-time large"></span><span style="font-size: 2em"> Most recent Tweet</span></div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="progress M10">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" id="positive-count" role="progressbar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="progress M10">
-                                    <div class="progress-bar progress-bar-danger progress-bar-striped active" id="negative-count" role="progressbar" style="width: 0%"></div>
-                                </div>
-                            </div>
+                            <div id="tweets-collection"></div>
                         </div>
                     </div>
                 </div>
