@@ -3,7 +3,7 @@ var autopublisher = function(interval, server) {
     var socketIO = require('socket.io');
     var io = socketIO(server);
     var Database = require('./database');
-    var publishData = function() {
+    var publishChartData = function() {
         Database.getMostFrequentlySaidWords(10, function(data) {
             io.emit('mostFrequent', data);
         });
@@ -15,7 +15,8 @@ var autopublisher = function(interval, server) {
         Database.getNumberOfTweetsAnalyzed(function(data) {
             io.emit('numberOfTweetsAnalyzed', data);
         });
-
+    }
+    var publishTweetData = function() {
         Database.getMostRecentTweet(function(tweet) {
             if (tweet !== null) {
                 var stripped = tweet.tweet.replace(/(?:https?|http):\/\/[\n\S]+/g, '');
@@ -23,8 +24,11 @@ var autopublisher = function(interval, server) {
             }
         });
     }
-    setInterval(publishData, interval);
-    publishData();
+
+    setInterval(publishChartData, interval);
+    setInterval(publishTweetData, interval * 2);
+    publishChartData();
+    publishTweetData();
 };
 
 module.exports = autopublisher;
