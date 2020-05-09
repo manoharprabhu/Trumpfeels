@@ -26,7 +26,6 @@ var collector = function(keyword) {
     var stream = T.stream('statuses/filter', { track: keyword })
     stream.on('tweet', function(tweet) {
         var setimentResult = sentiment(tweet.text);
-        var dd = new Date(tweet.created_at);
         var object = {
             "tweet": tweet.text,
             "time": (new Date(tweet.created_at)).getTime(),
