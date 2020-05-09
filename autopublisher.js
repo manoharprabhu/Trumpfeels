@@ -23,8 +23,13 @@ var autopublisher = function(interval, server) {
         }
     }
 
+    var printUsageStats = function() {
+        console.log(process.memoryUsage());
+    }
+
     setInterval(publishChartData, interval);
     setInterval(publishTweetData, interval * 2);
+    setInterval(printUsageStats, 10000);
     publishChartData();
     publishTweetData();
 };
