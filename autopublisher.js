@@ -8,7 +8,7 @@ var autopublisher = function(interval, server) {
             io.emit('mostFrequent', data);
         });
 
-        Database.getCurrentAverageScore(5000, function(data) {
+        Database.getCurrentAverageScore(function(data) {
             io.emit('currentAverageScore', data);
         });
 
@@ -17,12 +17,10 @@ var autopublisher = function(interval, server) {
         });
     }
     var publishTweetData = function() {
-        Database.getMostRecentTweet(function(tweet) {
-            if (tweet !== null) {
-                var stripped = tweet.tweet.replace(/(?:https?|http):\/\/[\n\S]+/g, '');
-                io.emit('mostRecentTweet', stripped);
-            }
-        });
+        if(Database.getMostRecentTweet()) {
+            const stripped = Database.getMostRecentTweet().replace(/(?:https?|http):\/\/[\n\S]+/g, '');
+            io.emit('mostRecentTweet', stripped);
+        }
     }
 
     setInterval(publishChartData, interval);

@@ -1,7 +1,6 @@
 var collector = function(keyword) {
     console.log('Started collecting info on ' + keyword);
     var Twit = require('twit');
-    var sentiment = require('sentiment');
     var Database = require('./database');
     const TWITTER_CONSUMER_KEY = process.env.TWITTER_CONSUMER_KEY;
     const TWITTER_CONSUMER_SECRET = process.env.TWITTER_CONSUMER_SECRET;
@@ -25,13 +24,7 @@ var collector = function(keyword) {
 
     var stream = T.stream('statuses/filter', { track: keyword })
     stream.on('tweet', function(tweet) {
-        var setimentResult = sentiment(tweet.text);
-        var object = {
-            "tweet": tweet.text,
-            "time": (new Date(tweet.created_at)).getTime(),
-            "sentiment": setimentResult
-        };
-        Database.insertIntoDB(object);
+        Database.setMostRecentTweet(tweet.text);
     });
 }
 
