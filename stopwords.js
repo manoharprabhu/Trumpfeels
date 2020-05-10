@@ -22,7 +22,6 @@ const stopwords = {
     'by': true,
     'came': true,
     'can': true,
-
     'come': true,
     'could': true,
     'did': true,
@@ -34,7 +33,6 @@ const stopwords = {
     'got': true,
     'has': true,
     'had': true,
-
     'he': true,
     'have': true,
     'her': true,
@@ -46,7 +44,6 @@ const stopwords = {
     'if': true,
     'in': true,
     'into': true,
-
     'is': true,
     'it': true,
     'like': true,
@@ -58,7 +55,6 @@ const stopwords = {
     'most': true,
     'much': true,
     'must': true,
-
     'my': true,
     'never': true,
     'now': true,
@@ -70,7 +66,6 @@ const stopwords = {
     'our': true,
     'out': true,
     'over': true,
-
     'said': true,
     'same': true,
     'see': true,
@@ -81,7 +76,6 @@ const stopwords = {
     'such': true,
     'take': true,
     'than': true,
-
     'that': true,
     'the': true,
     'their': true,
@@ -92,7 +86,6 @@ const stopwords = {
     'they': true,
     'this': true,
     'those': true,
-
     'through': true,
     'to': true,
     'too': true,
@@ -104,7 +97,6 @@ const stopwords = {
     'we': true,
     'well': true,
     'were': true,
-
     'what': true,
     'where': true,
     'which': true,
@@ -116,33 +108,22 @@ const stopwords = {
     'your': true,
     'a': true,
     'i': true,
-
     'rt': true,
     'amp': true,
     '': true,
     'not': true,
-    'trump': true,
-    'trumps': true,
     'will': true,
     'not': true,
     'president': true,
     'its': true,
-    'donald': true,
-
-    'trump': true,
-    'donaldtrump': true,
     'http': true,
     'https': true,
-    'realdonaldtrump': true,
     'when': true,
     'know': true,
     'lets': true,
     'just': true,
     'dont': true,
-
-    'potus': true,
-    'realdonaldtrump': true,
-    'realdonaldtrumps': true
+    'elonmusk': true,
 }
 
 module.exports = stopwords;

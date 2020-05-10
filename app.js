@@ -42,6 +42,6 @@ app.use(function(err, req, res, next) {
 });
 
 //Start twitter streamng api and collect tweets
-collector('realDonaldTrump,potus');
+collector('elonmusk');
 
 module.exports = app;
