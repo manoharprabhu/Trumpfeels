@@ -14,9 +14,9 @@ class Database {
 
     static setMostRecentTweet(tweet) {
         var setimentResult = sentiment(tweet);
-        if (setimentResult.score <= 0) {
+        if (setimentResult.score < 0) {
             negativeTweetsCount++;
-        } else {
+        } else if (setimentResult.score > 0) {
             positiveTweetsCount++;
         }
         numberOfTweetsAnalyzed++;
